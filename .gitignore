@@ -1,0 +1,17 @@
+# Ignore Python cache directories
+__pycache__/
+*.py[cod]
+
+# Ignore C extensions
+*.so
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore IDE-specific files (optional, but useful)
+.vscode/
+.idea/
