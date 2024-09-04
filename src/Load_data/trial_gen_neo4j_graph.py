@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-from trial_gen_data import generate_data
+from Load_data.trial_gen_data import generate_data
 # Replace with your Neo4j credentials
 NEO4J_URI = "bolt://localhost:7687"  # Default URI
 NEO4J_USER = "neo4j"
