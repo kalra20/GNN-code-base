@@ -51,7 +51,7 @@ Usage
    The GraphSAGE algorithm is designed to learn useful node embeddings by sampling and aggregating features from neighboring nodes. This approach is highly efficient for large, evolving graphs where it is computationally expensive to retrain the entire model. We apply this to the customer-product interaction graph to generate embeddings that are later used for recommendations.
 
 2. Data Preparation
-   The input data should represent a graph structure where nodes represent customers and products, and edges represent interactions between customers and products (e.g., purchases, views). The graph can also include additional features such as customer demographics or product details.
+   The input data should represent a graph structure where nodes represent customers and products, and edges represent interactions between customers and merchants (e.g., purchases, views). The graph can also include additional features such as customer demographics and merchant details.
 
 Sample format for edge data (CSV):
 
@@ -67,18 +67,9 @@ Ensure that your dataset is prepared in the correct format before proceeding to 
 3. Training the Model
    To train the GraphSAGE model:
 
-Preprocess the graph data (customer-product interactions) using the provided script:
-
-```
-python preprocess_graph_data.py --input your_dataset.csv --output processed_graph_data/
-```
+Preprocess the graph data (customer-merchant interactions) using the provided script:
 
 Train the GraphSAGE model:
-
-```
-python train.py --data_dir processed_graph_data/ --epochs 20 --batch_size 128
-Additional command-line arguments can be passed to control the model architecture, hyperparameters, and training behavior.
-```
 
 4. Generating Recommendations
    Once the model is trained, you can generate product recommendations for a specific customer by running:
@@ -88,12 +79,6 @@ python recommend.py --customer_id 123 --top_k 10
 ```
 
 This will output the top 10 recommended products for the customer with ID 123.
-
-You can also generate recommendations for all customers by omitting the --customer_id argument:
-
-```
-python recommend.py --top_k 10
-```
 
 5. Pre-commit Hooks
    The project includes several pre-commit hooks to ensure code quality and consistency. These hooks run automatically on every commit and include:
@@ -109,17 +94,3 @@ pre-commit run --all-files
 ```
 
 The configuration for the pre-commit hooks is available in the .pre-commit-config.yaml file.
-
-Contributing
-We welcome contributions to improve the recommendation system! Please follow the steps below to contribute:
-
-Fork the repository and create a new branch for your feature or bugfix.
-Submit a pull request with a detailed description of your changes.
-Before contributing, ensure that all tests pass and the code adheres to the style guide using the pre-commit hooks.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Additional Notes:
-Make sure to update the requirements.txt with any necessary libraries used in your project, such as torch, dgl, or pyG (PyTorch Geometric) depending on the framework you're using for GraphSAGE.
-You can extend the README with more details specific to your project's implementation of GraphSAGE or other domain-specific information.
