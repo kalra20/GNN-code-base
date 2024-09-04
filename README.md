@@ -25,8 +25,8 @@ Follow these steps to set up the project locally:
 Clone this repository:
 
 ```
-git clone https://github.com/your-username/gnn-recommendation-system.git
-cd gnn-recommendation-system
+git clone https://github.com/kalra20/GNN-code-base.git
+cd GNN-code-base
 Create and activate a virtual environment (optional but recommended):
 ```
 
