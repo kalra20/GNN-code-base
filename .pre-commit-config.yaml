@@ -14,12 +14,13 @@ repos:
     rev: 7.1.1 # Choose the appropriate version of flake8
     hooks:
       - id: flake8 # Lints Python files and enforces style
-
+        args: [--max-line-length=120]
   # Black - Python code formatter
   - repo: https://github.com/psf/black
     rev: 23.7.0 # Use the appropriate version of Black
     hooks:
       - id: black # Automatically formats Python code
+        args: [--line-length=120]
 
   # JSON linting
   - repo: https://github.com/antonbabenko/pre-commit-terraform
